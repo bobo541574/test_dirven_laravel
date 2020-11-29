@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/books', 'BookController');
-// Route::post('/books', 'BookController@store');
-// Route::patch('/books', 'BookController@update');
+// Route::resource('/books', 'BookController');
+Route::post('/books', 'BookController@store');
+Route::post('/books', 'BookController@store');
+Route::patch('/books/{book}', 'BookController@update');
+Route::delete('/books/{book}', 'BookController@destroy');
+
+Route::post('/authors', 'AuthorController@store');
